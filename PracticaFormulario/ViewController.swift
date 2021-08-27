@@ -10,16 +10,36 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var sgmAME: UISegmentedControl!
+    @IBOutlet weak var lblIdentificador: UILabel!
+    @IBOutlet weak var txtIngresar: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
+    @IBAction func doCambiarAme(_ sender: Any) {
+        if sgmAME.selectedSegmentIndex == 0 {
+            lblIdentificador.text = "Matrícula"
+            txtIngresar.placeholder = "Igrese su matrícula"
+        }
+
+        if sgmAME.selectedSegmentIndex == 1 {
+            lblIdentificador.text = "Número de maestro"
+            txtIngresar.placeholder = "Igrese su número de maestro"
+        }
+        
+        if sgmAME.selectedSegmentIndex == 2 {
+            lblIdentificador.text = "Número de empleado"
+            txtIngresar.placeholder = "Igrese su número de empleado"
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
